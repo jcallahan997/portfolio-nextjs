@@ -2,8 +2,9 @@
 
 import { GlassCard } from "@/components/glass/GlassCard";
 import { motion } from "framer-motion";
-import { Download, Linkedin, Github } from "lucide-react";
+import { Download, Linkedin, Github, Mail } from "lucide-react";
 import Image from "next/image";
+import { PDFViewer } from "@/components/PDFViewer";
 
 export default function HomePage() {
   return (
@@ -45,7 +46,14 @@ export default function HomePage() {
           </p>
 
           {/* Social links */}
-          <div className="flex gap-3 mt-6 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-3 mt-6 justify-center md:justify-start">
+            <a
+              href="mailto:jcallahan997@gmail.com"
+              className="btn-primary flex items-center gap-2"
+            >
+              <Mail className="w-4 h-4 text-burgundy" />
+              Email
+            </a>
             <a
               href="https://www.linkedin.com/in/jamesacallahan"
               target="_blank"
@@ -81,21 +89,10 @@ export default function HomePage() {
             Download PDF
           </a>
         </div>
-        <div
-          className="rounded-xl overflow-hidden border border-white/[0.06] relative"
-          style={{ height: "1100px", overflow: "hidden" }}
-        >
-          <embed
-            src="/resume/James_Callahan_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
-            type="application/pdf"
-            className="w-full"
-            style={{
-              height: "calc(100% + 20px)",
-              marginBottom: "-20px",
-              pointerEvents: "none"
-            }}
-          />
-        </div>
+        <PDFViewer
+          src="/resume/James_Callahan_Resume.pdf"
+          className="rounded-xl"
+        />
       </GlassCard>
     </div>
   );
