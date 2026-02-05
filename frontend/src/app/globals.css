@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+@layer base {
+  body {
+    @apply bg-bg text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* ── Liquid Glass ── */
+  .glass {
+    background: rgba(0, 128, 128, 0.08);
+    backdrop-filter: blur(24px) saturate(1.4);
+    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+
+  .glass:hover {
+    box-shadow:
+      0 12px 40px rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+
+  .glass-burgundy {
+    background: rgba(114, 47, 55, 0.10);
+    backdrop-filter: blur(24px) saturate(1.4);
+    -webkit-backdrop-filter: blur(24px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 20px;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .glass-subtle {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .glass-sidebar {
+    background: rgba(0, 128, 128, 0.05);
+    backdrop-filter: blur(32px) saturate(1.5);
+    -webkit-backdrop-filter: blur(32px) saturate(1.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+      4px 0 24px rgba(0, 0, 0, 0.2),
+      inset -1px 0 0 rgba(255, 255, 255, 0.05);
+  }
+
+  /* ── Gradient Mesh Background ── */
+  .gradient-mesh {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .gradient-mesh::before {
+    content: "";
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 128, 128, 0.08) 0%,
+      transparent 70%
+    );
+    animation: meshFloat1 20s ease-in-out infinite;
+  }
+
+  .gradient-mesh::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 55%;
+    height: 55%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(114, 47, 55, 0.05) 0%,
+      transparent 70%
+    );
+    animation: meshFloat2 25s ease-in-out infinite;
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply px-6 py-2.5 rounded-xl font-medium text-sm transition-all duration-300;
+    background: rgba(0, 128, 128, 0.2);
+    border: 1px solid rgba(0, 128, 128, 0.4);
+    color: #20B2AA;
+    backdrop-filter: blur(12px);
+  }
+
+  .btn-primary:hover {
+    background: rgba(0, 128, 128, 0.35);
+    border-color: rgba(0, 128, 128, 0.6);
+    box-shadow: 0 0 20px rgba(0, 128, 128, 0.2);
+  }
+
+  .btn-burgundy {
+    @apply px-6 py-2.5 rounded-xl font-medium text-sm transition-all duration-300;
+    background: rgba(114, 47, 55, 0.25);
+    border: 1px solid rgba(114, 47, 55, 0.5);
+    color: #e6edf3;
+    backdrop-filter: blur(12px);
+  }
+
+  .btn-burgundy:hover {
+    background: rgba(114, 47, 55, 0.4);
+    border-color: rgba(114, 47, 55, 0.7);
+    box-shadow: 0 0 20px rgba(114, 47, 55, 0.25);
+  }
+
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes meshFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(5%, 3%) scale(1.05); }
+  66% { transform: translate(-3%, -2%) scale(0.97); }
+}
+
+@keyframes meshFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-4%, -3%) scale(1.03); }
+  66% { transform: translate(3%, 2%) scale(0.95); }
+}

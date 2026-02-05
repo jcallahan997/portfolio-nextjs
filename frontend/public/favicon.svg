@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Sparkle icon with burgundy and teal gradient -->
+  <defs>
+    <linearGradient id="sparkleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#722F37"/>
+      <stop offset="50%" style="stop-color:#008080"/>
+      <stop offset="100%" style="stop-color:#20B2AA"/>
+    </linearGradient>
+  </defs>
+  <!-- Main sparkle -->
+  <path d="M16 2L18.5 12.5L28 16L18.5 19.5L16 30L13.5 19.5L4 16L13.5 12.5L16 2Z" fill="url(#sparkleGradient)"/>
+  <!-- Small accent sparkles -->
+  <circle cx="6" cy="6" r="1.5" fill="#722F37"/>
+  <circle cx="26" cy="6" r="1.5" fill="#008080"/>
+  <circle cx="6" cy="26" r="1.5" fill="#008080"/>
+  <circle cx="26" cy="26" r="1.5" fill="#722F37"/>
+</svg>
