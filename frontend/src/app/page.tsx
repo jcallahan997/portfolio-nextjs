@@ -81,20 +81,20 @@ export default function HomePage() {
             Download PDF
           </a>
         </div>
-        <div className="rounded-xl overflow-hidden border border-white/[0.06] relative" style={{ height: "1100px" }}>
-          <object
-            data="/resume/James_Callahan_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+        <div
+          className="rounded-xl overflow-hidden border border-white/[0.06] relative"
+          style={{ height: "1100px", overflow: "hidden" }}
+        >
+          <embed
+            src="/resume/James_Callahan_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
             type="application/pdf"
-            className="w-full h-full"
-            style={{ display: "block" }}
-          >
-            <p className="text-foreground-muted p-4">
-              Unable to display PDF.{" "}
-              <a href="/resume/James_Callahan_Resume.pdf" className="text-cerulean-light hover:underline">
-                Download instead
-              </a>
-            </p>
-          </object>
+            className="w-full"
+            style={{
+              height: "calc(100% + 20px)",
+              marginBottom: "-20px",
+              pointerEvents: "none"
+            }}
+          />
         </div>
       </GlassCard>
     </div>
