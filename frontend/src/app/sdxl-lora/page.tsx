@@ -59,7 +59,7 @@ export default function SdxlLoraPage() {
         <div className="flex items-center gap-3 mb-2">
           <Sparkles className="w-6 h-6 text-burgundy" />
           <h1 className="text-3xl font-bold text-foreground">
-            Stable Diffusion LoRA <span className="text-lg opacity-60 font-normal block">automotive application</span>
+            Stable Diffusion LoRA <span className="text-lg opacity-60 font-normal block">Automotive Application</span>
           </h1>
         </div>
         <p className="text-foreground-muted leading-relaxed">

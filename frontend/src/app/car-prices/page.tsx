@@ -15,7 +15,7 @@ export default function CarPricesPage() {
         <div className="flex items-center gap-3 mb-2">
           <Car className="w-6 h-6 text-burgundy" />
           <h1 className="text-3xl font-bold text-foreground">
-            Car Price Distribution <sub className="text-sm opacity-60 font-normal">R</sub>
+            Car Price Distribution
           </h1>
         </div>
         <p className="text-foreground-muted">
