@@ -3,8 +3,22 @@
 import { GlassCard } from "@/components/glass/GlassCard";
 import { motion } from "framer-motion";
 import { TrendingUp, Github } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 export default function CarPricesPage() {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [iframeHeight, setIframeHeight] = useState(4000);
+
+  useEffect(() => {
+    const handleMessage = (e: MessageEvent) => {
+      if (e.data?.type === "shiny-height" && typeof e.data.height === "number") {
+        setIframeHeight(e.data.height);
+      }
+    };
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
+
   return (
     <div className="space-y-8">
       <motion.div
@@ -39,9 +53,11 @@ export default function CarPricesPage() {
       <GlassCard className="p-2">
         <div className="rounded-xl overflow-hidden border border-white/[0.06]">
           <iframe
+            ref={iframeRef}
             src="https://fxyqh7-james-callahan.shinyapps.io/vehicle-sales-shiny/"
             className="w-full bg-bg-card"
-            style={{ height: "2200px" }}
+            style={{ height: `${iframeHeight}px`, overflow: "hidden" }}
+            scrolling="no"
             title="U.S. Vehicle Sales Trends - R Shiny Dashboard"
           />
         </div>
