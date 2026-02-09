@@ -7,7 +7,7 @@ import {
   Home,
   BarChart3,
   MessageSquare,
-  Car,
+  TrendingUp,
   Sparkles,
   Gamepad2,
   Menu,
@@ -23,7 +23,7 @@ const navItems = [
   { href: "/clustering", label: "Clustering", sub: null, icon: BarChart3 },
   { href: "/toastmasters", label: "Table Topics", sub: null, icon: MessageSquare },
   { href: "/sdxl-lora", label: "Stable Diffusion LoRA", sub: "Automotive Application", icon: Sparkles },
-  { href: "/car-prices", label: "Car Price Distribution", sub: "R-Language Throwback", icon: Car },
+  { href: "/car-prices", label: "Vehicle Sales Trends", sub: "R-Language Throwback", icon: TrendingUp },
   { href: "/pacman", label: "Pac-Man", sub: null, icon: Gamepad2 },
 ];
 
